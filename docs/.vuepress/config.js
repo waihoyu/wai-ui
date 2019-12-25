@@ -1,7 +1,7 @@
-const path = require('path')
+const path = require('path');
 module.exports = {
-    base: '/M1/',
-    title: 'M1',
+    base: '/wai-ui/',
+    title: 'wai-ui',
     description: '一个好用的UI框架',
     themeConfig: {
         nav: [
@@ -34,4 +34,4 @@ module.exports = {
     // scss: {
     //     includePaths: [path.join(__dirname, '../../styles')],
     // },
-}
+};
