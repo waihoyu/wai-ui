@@ -9,7 +9,7 @@
   <!-- <a href="https://github.com/ElemeFE/element">
     <img src="https://img.shields.io/badge/element--ui-2.7.0-brightgreen.svg" alt="element-ui">
   </a> -->
-  <a href="https://travis-ci.org/waihoyu/wai" rel="nofollow">
+  <a href="https://travis-ci.org/waihoyu/wai-ui" rel="nofollow">
     <img src="https://travis-ci.com/waihoyu/wai-ui.svg?branch=master" alt="Build Status">
   </a>
   <a href="https://github.com/waihoyu/wai-ui/master/LICENSE">
