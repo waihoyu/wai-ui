@@ -36,7 +36,7 @@
 
 ## 简介
 
-[wai-ui](https://waihoyu.github.io/wai-ui) 是一个后台前端解决方案，它基于 [vue](https://github.com/vuejs/vue) 和 [nutui](https://github.com/jdf2e/nutui)实现。它使用了最新的前端技术栈，基本覆盖了 Vue.js 全家桶的所有技术。
+[wai-ui](https://waihoyu.github.io/wai-ui) 是一个自己仿写的组件库，它基于 [vue](https://github.com/vuejs/vue) ，参考了 ElementUI 和 [nutui](https://github.com/jdf2e/nutui)实现。它使用了最新的前端技术栈，基本覆盖了 Vue.js 全家桶的所有技术。
 
 -   [在线预览](https://waihoyu.github.io/wai-ui)
 
@@ -73,9 +73,19 @@
 ## 功能
 
 ```
-- 登录 / 注销
+- 基础组件
+  - 头像
+  - 按钮
+  - 表单
 
-- 首页底部导航栏
+- 业务组件
+  - 首页
+  - 推荐
+  - 搜索
+  - 聊天
+  - 我的
+
+- 页面组件
   - 首页
   - 推荐
   - 搜索

@@ -1,8 +1,13 @@
-import Vue from 'vue'
-import App from './App.vue'
-
-Vue.config.productionTip = false
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+// import waiForm from "./packages/wai-form/index";
+// Vue.use(waiForm);
+import waiui from "./waiui";
+Vue.use(waiui);
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+    router,
+    render: h => h(App),
+}).$mount("#app");

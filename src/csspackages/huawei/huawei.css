@@ -1,0 +1,263 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: #000;
+    overflow: hidden;
+}
+
+.g-number {
+    position: absolute;
+    width: 300px;
+    top: 27%;
+    text-align: center;
+    font-size: 32px;
+    z-index: 10;
+    color: #fff;
+}
+
+.g-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: auto;
+}
+
+.g-contrast {
+    filter: contrast(15) hue-rotate(0);
+    width: 300px;
+    height: 400px;
+    background-color: orange;
+    overflow: hidden;
+    animation: hueRotate2 10s infinite linear;
+}
+
+@keyframes hueRotate2 {
+    100% {
+        filter: contrast(15) hue-rotate(360deg);
+    }
+}
+
+.g-circle {
+    position: relative;
+    width: 320px;
+    height: 100px;
+    box-sizing: border-box;
+    border: #fff solid 10px;
+    background-color: orange;
+    filter: blur(7px);
+}
+.g-circle::after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    width: 200px;
+    height: 200px;
+    background-color: #00ff6f;
+    border-radius: 42% 38% 62% 49% / 45%;
+    animation: rotate 10s infinite linear;
+}
+
+@keyframes rotate {
+    50% {
+        border-radius: 45% / 42% 38% 58% 49%;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(720deg);
+    }
+}
+
+.g-circle::before {
+    content: "";
+    position: absolute;
+    width: 176px;
+    height: 176px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: red;
+    z-index: 10;
+}
+
+.g-bubbles {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100px;
+    height: 40px;
+    transform: translate(-50%, 0);
+    border-radius: 100px 100px 0 0;
+    background-color: #00ff6f;
+    filter: blur(5px);
+}
+
+li {
+    position: absolute;
+    border-radius: 50%;
+    background: #00ff6f;
+}
+
+li:nth-child(0) {
+    left: 81px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    animation: moveToTop 9s ease-in-out -1.044s infinite;
+}
+
+li:nth-child(1) {
+    left: 29px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 26px;
+    height: 26px;
+    animation: moveToTop 5s ease-in-out -3.466s infinite;
+}
+
+li:nth-child(2) {
+    left: 72px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 27px;
+    height: 27px;
+    animation: moveToTop 5s ease-in-out -4.262s infinite;
+}
+
+li:nth-child(3) {
+    left: 61px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    animation: moveToTop 7s ease-in-out -4.641s infinite;
+}
+
+li:nth-child(4) {
+    left: 58px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    animation: moveToTop 9s ease-in-out -4.552s infinite;
+}
+
+li:nth-child(5) {
+    left: 24px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    animation: moveToTop 9s ease-in-out -0.477s infinite;
+}
+
+li:nth-child(6) {
+    left: 41px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    animation: moveToTop 7s ease-in-out -3.544s infinite;
+}
+
+li:nth-child(7) {
+    left: 60px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    animation: moveToTop 4s ease-in-out -4.334s infinite;
+}
+
+li:nth-child(8) {
+    left: 42px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    animation: moveToTop 9s ease-in-out -2.804s infinite;
+}
+
+li:nth-child(9) {
+    left: 25px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    animation: moveToTop 8s ease-in-out -0.285s infinite;
+}
+
+li:nth-child(10) {
+    left: 73px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    animation: moveToTop 6s ease-in-out -1.467s infinite;
+}
+
+li:nth-child(11) {
+    left: 22px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    animation: moveToTop 7s ease-in-out -1.032s infinite;
+}
+
+li:nth-child(12) {
+    left: 83px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 23px;
+    height: 23px;
+    animation: moveToTop 4s ease-in-out -0.078s infinite;
+}
+
+li:nth-child(13) {
+    left: 45px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 17px;
+    height: 17px;
+    animation: moveToTop 5s ease-in-out -1.957s infinite;
+}
+
+li:nth-child(14) {
+    left: 50px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    animation: moveToTop 4s ease-in-out -2.084s infinite;
+}
+
+li:nth-child(15) {
+    left: 81px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 19px;
+    height: 19px;
+    animation: moveToTop 4s ease-in-out -2.02s infinite;
+}
+
+@keyframes moveToTop1 {
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.1;
+        transform: translate(-100%, -180px);
+    }
+}
+@keyframes hueRotate {
+    100% {
+        filter: contrast(1) hue-rotate(360deg);
+    }
+}
+
+/*# sourceMappingURL=huawei.css.map */
