@@ -1,12 +1,15 @@
 import waiForm from "./packages/wai-form";
 import waiButton from "./packages/wai-button";
 import waiAvatar from "./packages/wai-avatar";
+import waiToast from "./packages/wai-toast";
+
 import { version } from "../package.json";
 import { packages as pkgList } from "./config.json";
 const packages = {
     waiForm,
     waiButton,
     waiAvatar,
+    waiToast,
 };
 const components = {};
 pkgList.map(item => {
@@ -29,6 +32,7 @@ const install = function(Vue, opts = {}) {
     if (install.installed) {
         return;
     }
+    install.installed = true;
     for (let ctp in components) {
         if (components[ctp] && components[ctp].name) {
             Vue.component(components[ctp].name, components[ctp]);

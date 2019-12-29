@@ -6,6 +6,7 @@
     <br>
     <router-link to="waibutton">按钮组件</router-link>
     <br>
+    <router-link to="waitoast">吐司组件</router-link>
     <br>
     <br>
     <div class="showArea">

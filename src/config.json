@@ -8,6 +8,15 @@
         "基础组件"
     ],
     "packages": [{
+        "name": "waiToast",
+        "version": "1.0.0",
+        "sort": "1",
+        "chnName": "吐司控件",
+        "type": "component",
+        "showDemo": true,
+        "desc": "吐司项",
+        "author": "WaiHoYu"
+    }, {
         "name": "waiAvatar",
         "version": "1.0.0",
         "sort": "1",

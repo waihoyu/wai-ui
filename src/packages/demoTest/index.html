@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+        <!-- <script src="https://cdn.bootcss.com/vuex/3.1.1/vuex.esm.browser.js"></script> -->
+        <!-- <script src="https://cdn.bootcss.com/vue-router/3.1.3/vue-router.common.js"></script> -->
+    </head>
+    <body>
+        <div id="app"></div>
+        <script>
+            // Vue.component("child", {
+            //     data() {
+            //         return {
+            //             mymessage: this.message,
+            //         };
+            //     },
+            //     template: `
+            //             <div>
+            //                 <input type="text" v-model="mymessage"
+            //                 @input="passData(mymessage)"> </div>
+            //         `,
+            //     props: ["message"], //得到父组件传递过来的数据
+            //     methods: {
+            //         passData(val) {
+            //             //触发父组件中的事件
+            //             console.log("--child--");
+            //             this.$emit("getChildData", val);
+            //             console.log("--child--");
+            //         },
+            //     },
+            // });
+
+            // Vue.component("parent", {
+            //     template: `
+            //             <div>
+            //                 <p>this is parent compoent!</p>
+            //                 <child :message="message"
+            //                 v-on:getChildData="getChildData"></child>
+            //             </div>
+            //         `,
+            //     data() {
+            //         return {
+            //             message: "张不怂",
+            //         };
+            //     },
+            //     methods: {
+            //         //执行子组件触发的事件
+            //         getChildData(val) {
+            //             console.log("--parent--");
+            //             console.log(val);
+            //             console.log("--parent--");
+            //         },
+            //     },
+            // });
+
+            // // 挂载
+            // var app = new Vue({
+            //     el: "#app",
+            //     template: `
+            //             <div>
+            //                 <parent></parent>
+            //             </div>
+            //         `,
+            // });
+
+            //----------------------------------------------------------------
+            var bus = new Vue();
+            Vue.component("parent", {
+                provide: {
+                    provideFromP: "provide from parent",
+                },
+                data() {
+                    return {
+                        messageFromChild: "",
+                        messageFromParent2: "",
+                        parentvmodel: "888888",
+                    };
+                },
+                methods: {
+                    getDataFromChild(val) {
+                        console.log("getDataFromChild");
+                        console.log(val);
+                        this.messageFromChild = val;
+                    },
+                    doTest() {
+                        console.log("doTest");
+                    },
+                    getChild() {
+                        this.$children[0].parent$ = this.$children[0].parent$ + 1;
+                        this.$children[0].parentss = this.$children[0].parentss + 2;
+                    },
+                },
+                mounted() {
+                    bus.$on("globalEvent", val => {
+                        this.messageFromParent2 = val;
+                    });
+                },
+                template: `
+                <div>
+                    <br>
+                        
+                    <br>
+                    messageFromChild:{{messageFromChild}}
+                    <br>
+                    messageFromParent2:{{messageFromParent2}}
+                    <child @test="doTest" v-on:getDataFromChild="getDataFromChild" v-model="parentvmodel"></child>
+                    <button @click="getChild">我去设置儿子的parent$</button>
+                </div>`,
+            });
+
+            Vue.component("parent2", {
+                data() {
+                    return {
+                        messageFromChild: "",
+                    };
+                },
+                methods: {
+                    getDataFromChild(val) {
+                        console.log("getDataFromChild");
+                        console.log(val);
+                        this.messageFromChild = val;
+                    },
+                    sendMessageToOther(val) {
+                        bus.$emit("globalEvent", val);
+                    },
+                },
+                template: `
+                <div>
+                    我是parent2
+                    <button @click="sendMessageToOther('我是parent2')">我是parent2</button>
+                </div>`,
+            });
+
+            Vue.component("child", {
+                inject: ["provideFromP"],
+                data() {
+                    return {
+                        message: this.pd,
+                        parentvmodel: this.value,
+                        provideFromP: this.provideFromP,
+                        parent$: 0,
+                        parentss: 0,
+                    };
+                },
+                props: {
+                    pd: {
+                        type: String,
+                        default: "this is child",
+                    },
+                    value: String,
+                },
+                methods: {
+                    postData(val) {
+                        console.log(this.message);
+                        this.$emit("getDataFromChild", this.message);
+                    },
+                    getParentVmodel() {
+                        console.log(this.parentvmodel);
+                    },
+                    getprovideFromP() {
+                        console.log(this.provideFromP);
+                    },
+                },
+                template: `<div>child 
+                    <childchild v-bind="$attrs" v-on="$listeners"></childchild>
+                    <input v-model="message" @input="postData"></input>
+                    <button @click="getParentVmodel">getParentVmodel</button>
+                    <button @click="getprovideFromP">getprovideFromP</button>
+                    parent$:{{this.parent$}}
+                    parentss:{{this.parentss}}
+                    </div>`,
+            });
+            Vue.component("childchild", {
+                data() {
+                    return {
+                        message: this.pd,
+                        parentvmodel: this.value,
+                        provideFromP: this.provideFromP,
+                    };
+                },
+                props: {
+                    pd: {
+                        type: String,
+                        default: "this is child",
+                    },
+                    value: String,
+                },
+                methods: {
+                    postData(val) {
+                        console.log(this.message);
+                        this.$emit("getDataFromChild", this.message);
+                    },
+                    getParentVmodel() {
+                        console.log(this.parentvmodel);
+                    },
+                    getprovideFromP() {
+                        console.log(this.provideFromP);
+                    },
+                    getDoTest() {
+                        console.log("getDoTest");
+                        this.$emit("test");
+                    },
+                },
+                template: `<div>childchild 
+                    <button @click="getDoTest">childchild</button>
+                    </div>`,
+            });
+            let app = new Vue({
+                el: "#app",
+                mode: "production",
+                template: `
+                    <div>
+                        <parent></parent>
+                        <parent2></parent2>
+                    </div>
+                `,
+            });
+        </script>
+    </body>
+</html>

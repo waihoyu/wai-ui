@@ -11,7 +11,7 @@
         "docs:build": "vuepress build docs"
     },
     "resolve": {
-        "@": "./src/packages/"
+        "@": "./src"
     },
     "dependencies": {
         "async-validator": "^3.2.3",
