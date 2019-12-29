@@ -1,6 +1,8 @@
-<h2 align="center" style="color:green">
+<p align="center">
     <img src="./src/assets/mainlogon.png" alt="waiui">
     <br>
+</p>
+<h2 align="center" style="color:green">
      wai-ui组件库简要说明
 </h2>
 
