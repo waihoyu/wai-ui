@@ -1,0 +1,39 @@
+@import "../../styles/index";
+
+.wai-button {
+    cursor: pointer;
+    height: $btn-height-big;
+    padding: 0 $btn-height-big;
+    outline: none;
+    font-size: $font-size-base;
+    color: $btn-gradient-color;
+    background: $btn-gradient-bg;
+    border: none;
+    box-sizing: border-box;
+
+    &[disabled] {
+        cursor: not-allowed;
+        background: $btn-disable-bg;
+        color: $btn-disable-color;
+    }
+
+    &.default {
+        // color: black;
+    }
+
+    &.actived {
+        background: $btn-label-light-bg;
+        color: $primary-color;
+        border: $border-width-base solid $primary-color;
+    }
+
+    &.circle {
+        border-radius: $btn-border-radius-large
+    }
+
+    &.small {
+        height: $btn-height-small;
+        padding: 0 $btn-height-small/2;
+        font-size: $font-size-small;
+    }
+}

@@ -1,5 +1,5 @@
 <template>
-<div>
+<div :class="['w-form']">
     <slot></slot>
 </div>
 </template>
@@ -9,7 +9,7 @@ export default {
     name: 'waiForm',
     provide() {
         return {
-            'form': this
+            form: this
         }
     },
     props: {
@@ -29,12 +29,19 @@ export default {
     },
     methods: {
         validate(callback) {
-
+            console.log(this.fields[0])
+            const tasks = this.fields.map(item=>item.validate())
+            let ret = true;
+            Promise.all(tasks).then(results => {
+                results.forEach(valid=>{
+                    if (!valid) {
+                        ret = false
+                    }
+                })
+                callback(ret)
+            })
         }
     },
 }
 </script>
 
-<style lang="scss" scoped>
-
-</style>

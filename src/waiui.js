@@ -2,6 +2,7 @@ import waiForm from "./packages/wai-form";
 import waiButton from "./packages/wai-button";
 import waiAvatar from "./packages/wai-avatar";
 import waiToast from "./packages/wai-toast";
+import waiIcon from "./packages/wai-icon";
 
 import { version } from "../package.json";
 import { packages as pkgList } from "./config.json";
@@ -10,6 +11,7 @@ const packages = {
     waiButton,
     waiAvatar,
     waiToast,
+    waiIcon,
 };
 const components = {};
 pkgList.map(item => {

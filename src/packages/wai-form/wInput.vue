@@ -24,7 +24,6 @@ export default {
     methods: {
         handleInput(e) {
             this.inputValue = e.target.value
-            //通知父组件更新
             this.$emit('input', this.inputValue)
             this.$parent.$emit('validate', this.inputValue)
         }
@@ -32,7 +31,3 @@ export default {
 
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

@@ -7,9 +7,7 @@
         <w-form-item label="密码" prop="pwd">
             <w-form-input type="password" v-model="ruleForm.pwd"></w-form-input>
         </w-form-item>
-        <w-form-item label="提交" prop="pwd">
-            <w-form-input type="button" @click="submitForm" value="提交"></w-form-input>
-        </w-form-item>
+            <input type="button" @click="submitForm('ruleForm')" value="提交"></input>
     </wai-form>
 </div>
 </template>
@@ -28,10 +26,10 @@ export default {
             rules: {
                 name: [{
                         required: true,
-                        message: '请输入名称'
+                        message: '请输入用户名'
                     },
                     {
-                        min: 6,
+                        min: 1,
                         max: 10,
                         message: '用户名需要6-10个字符'
                     }
@@ -49,7 +47,7 @@ export default {
                 if (valid) {
                     alert('验证成功')
                 } else {
-                    alert('error');
+                    alert('验证失败');
                     return false
                 }
             })
@@ -61,7 +59,3 @@ export default {
     }
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>

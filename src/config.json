@@ -8,6 +8,15 @@
         "基础组件"
     ],
     "packages": [{
+        "name": "waiIcon",
+        "version": "1.0.0",
+        "sort": "1",
+        "chnName": "图标控件",
+        "type": "component",
+        "showDemo": true,
+        "desc": "图标项",
+        "author": "WaiHoYu"
+    }, {
         "name": "waiToast",
         "version": "1.0.0",
         "sort": "1",

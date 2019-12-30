@@ -34,15 +34,15 @@ export default {
     methods: {
         validate(value) {
             return new Promise(resolve => {
-                console.log(value);
                 let descriptor = {}
                 descriptor[this.prop] = this.form.rules[this.prop]
                 const validator = new schema(descriptor)
                 let obj = {}
                 obj[this.prop] = value
+                console.log(value,'----')
                 validator.validate(obj, errors => {
                     if (errors) {
-                        console.log('error')
+                        console.log(errors)
                         this.validateStatus = "error"
                         this.errorMessage = errors[0].message
                         resolve(false)
@@ -55,14 +55,13 @@ export default {
                 })
             })
 
-        }
+        },
     },
     created() {
         this.$on('validate', this.validate);
+        // this.$on('input', this.input);
+
     },
 }
 </script>
 
-<style lang="scss" scoped>
-
-</style>
