@@ -33,7 +33,7 @@
         "@vue/cli-plugin-babel": "^4.1.0",
         "@vue/cli-service": "^4.1.0",
         "clean-webpack-plugin": "^3.0.0",
-        "node-sass": "^4.13.0",
+        "node-sass": "^7.0.0",
         "postcss-salad": "^2.0.1",
         "precss": "^4.0.0",
         "raw-loader": "^4.0.0",
